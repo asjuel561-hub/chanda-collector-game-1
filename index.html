@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#16382e" />
+  <title>চাঁদা কালেক্টর: বাজারে গণধাওয়া</title>
+</head>
+<body>
+  <div id="app">
+    <canvas id="game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">চা</span><div><strong>চাঁদা কালেক্টর</strong><small>বাজারে গণধাওয়া · ব্যঙ্গাত্মক গেম</small></div></div>
+      <div class="top-stats">
+        <div class="stat"><span>সময়</span><b id="timer">01:30</b></div>
+        <div class="stat"><span>স্কোর</span><b id="score">০</b></div>
+      </div>
+    </header>
+    <section class="mission panel">
+      <div class="panel-title">মিশন: বাজারে টিকে থাকো</div>
+      <div class="meter-label"><span>জনগণের ক্ষোভ</span><b id="angerText">২৫%</b></div>
+      <div class="meter"><div id="angerBar"></div></div>
+      <div class="hint" id="missionHint">বাজার ঘুরে দেখো — ধাওয়া শুরু হলে পালাও!</div>
+    </section>
+    <div class="toast" id="toast">বাজারে স্বাগতম!</div>
+    <section class="controls-card panel">
+      <b>কন্ট্রোল</b>
+      <div><kbd>W A S D</kbd> চলাফেরা</div>
+      <div><kbd>SPACE</kbd> লাফ</div>
+      <div><kbd>SHIFT</kbd> দ্রুত দৌড়</div>
+      <div><kbd>E</kbd> ইন্টারঅ্যাকশন</div>
+      <div><kbd>মাউস</kbd> ক্যামেরা ঘোরানো</div>
+      <small>মোবাইলে স্ক্রিনের বাম পাশে টাচ-জয়স্টিক ব্যবহার করুন।</small>
+    </section>
+    <div class="mobile-controls" id="mobileControls">
+      <div class="joystick" id="joystick"><div class="stick" id="stick"></div></div>
+      <div class="mobile-buttons"><button id="jumpBtn">লাফ ↑</button><button id="runBtn">দৌড় ⚡</button></div>
+    </div>
+    <button class="sound-btn" id="soundBtn" aria-label="শব্দ চালু বা বন্ধ">🔊 শব্দ চালু</button>
+    <div class="crosshair">＋</div>
+    <section class="overlay" id="startOverlay">
+      <div class="dialog">
+        <div class="eyebrow">একটি বাংলাদেশি বাজার কমেডি গেম</div>
+        <h1>চাঁদা কালেক্টর</h1>
+        <p>বাজারের সরু গলি, রিকশা আর ক্ষুব্ধ জনতার ভিড় পেরিয়ে পালাও। চাঁদাবাজির হাস্যকর পরিণতি—কিন্তু রক্তপাত নয়!</p>
+        <div class="quote">“কারেন্ট ছাড়া খাম্বা নেতা আমার আব্বা!”</div>
+        <button class="primary" id="startBtn">গেম শুরু করুন</button>
+        <small>কম্পিউটার: WASD · Space · Shift · E | মোবাইল: টাচ কন্ট্রোল</small>
+      </div>
+    </section>
+    <section class="overlay hidden" id="endOverlay">
+      <div class="dialog">
+        <div class="eyebrow" id="endEyebrow">মিশন শেষ</div>
+        <h1 id="endTitle">গেম ওভার!</h1>
+        <p id="endText">বাজার কমিটি হিসাব চাইছে।</p>
+        <div class="final-score">স্কোর: <b id="finalScore">০</b></div>
+        <button class="primary" id="restartBtn">আবার খেলুন</button>
+      </div>
+    </section>
+    <div class="subtitle" id="subtitle"></div>
+    <footer>কাল্পনিক চরিত্র ও ব্যঙ্গাত্মক পরিস্থিতি · Three.js + Vite</footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
